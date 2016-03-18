@@ -1,0 +1,30 @@
+<div>
+	<table class="table table-stripped">
+		<thead>
+			<tr class="unitTr">
+				<td class="firstTd">Item name</td>
+				<td>Unit</td>
+				<td>Par</td>
+				<td>Qty</td>
+				<td class="editableTd">Total Cost</td>
+				<td style="width:45px"></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-if="itemsList.length>0" class="unitTr" ng-repeat="reqItem in itemsList">
+				<td class="firstTd">{{reqItem.Name}}</td>
+				<td>{{reqItem.Unit}}</td>
+				<td>{{reqItem.Par}}</td>
+				<td class="editableTd"><input type="text" ng-model="reqItem.Quantity"/></td>
+				<td>{{reqItem.Name}}</td>
+				<td clas="actionTd" ng-click="removeRequisitionItem(reqItem)"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<div class="line">
+		<button ng-click="addRequisitionItem()" class="btn addButton"><i class="fa fa-plus"></i> Add Item</button>
+	</div>
+</div>

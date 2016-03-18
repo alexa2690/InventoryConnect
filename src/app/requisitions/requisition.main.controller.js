@@ -6,5 +6,6 @@
     .controller('RequisitionsController', RequisitionsController);
     
     function RequisitionsController(){
+    	
     }
 })();

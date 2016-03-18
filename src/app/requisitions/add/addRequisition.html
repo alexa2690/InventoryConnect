@@ -1,11 +1,11 @@
-<acme-navbar creation-date="main.creationDate"></acme-navbar>
-
+<!-- <acme-navbar creation-date="main.creationDate"></acme-navbar> -->
+<div class="content">
 	<header>Add Requisition</header>
 	<div style="padding-top:30px" class="inputLineGroup">
 		
 		<select  class="inputElement" ng-model="addReqCtrl.CostCenterId"
 		data-ng-options="costCenter.Id as costCenter.Name  for costCenter in addReqCtrl.costCenters">    
-
+ 
 	</select>
 
 	<div>
@@ -19,30 +19,35 @@
 
 	</div>
 
-<div class="inputLineGroup">		
-	<!-- <div> -->
-		<switch  style="float:left ; margin-right:10px;" id="enabled" name="enabled" ng-model="enabled" class="green noFocus"></switch>
-		<span style="line-height:32px;">   Use Template</span>
-	<!-- </div>			 -->
-	<div class="rightLabel">Requisition nr: {{addReqCtrl.req.Cost}}</div>		
+	<div class="inputLineGroup">		
+		<!-- <div> -->
+			<switch  style="float:left ; margin-right:10px;" id="enabled" name="enabled" ng-model="enabled" class="green noFocus"></switch>
+			<span style="line-height:32px;">   Use Template</span>
+		<!-- </div>			 -->
+		<div class="rightLabel">Requisition nr: {{addReqCtrl.req.Cost}}</div>		
+	</div>
+
+	<!-- Requisition Items  Table-->
+	<edit-table-directive items-list="addReqCtrl.requisitionItems">
+
+	</edit-table-directive>
+
+
+	<div class="inputLineGroup">
+			<div class="rightLabel">Total Requisition Cost: {{addReqCtrl.req.Cost}}</div>	
+	</div>
+
+	<div class="inputLineGroup">
+		<textarea placeholder="Notes"></textarea>
+	</div>
+
+	<div class="buttonGroup line">
+		<button ui-sref ="requisitions.all"  class="btn actionButton cancelButton">Cancel</button>
+
+		<button class="btn actionButton closeButton">Close Requisition</button>
+		<button class="btn actionButton saveButtton">Save</button>
+	</div>
+
+
 </div>
 
-<!-- Requisition Items  Table-->
-<add-req-item-table-directive items-list="addReqCtrl.requisitionItems">
-
-</add-req-item-table-directive>
-
-
-<div class="inputLineGroup">
-		<div class="rightLabel">Total Requisition Cost: {{addReqCtrl.req.Cost}}</div>	
-</div>
-
-<div class="inputLineGroup">
-	<textarea placeholder="Notes"></textarea>
-</div>
-
-<div class="buttonGroup line">
-	<button class="btn actionButton cancelButton">Cancel</button>
-	<button class="btn actionButton closeButton">Close Requisition</button>
-	<button class="btn actionButton saveButtton">Save</button>
-</div>
