@@ -53,6 +53,16 @@
                 > a:hover{
                     background-color: transparent;
                 }
+                
+                .dropdown {
+                    margin-top: 20px;
+                    font-size: $font-size-12;
+                    width: 160px;
+                    
+                    button {
+                        padding-bottom: 10px;
+                    }
+                }
              }
         }
     }

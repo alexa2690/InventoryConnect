@@ -1,9 +1,49 @@
 @import "../_general";
 
+$dropdown-border : none !default;
+$dropdown-text-color: $white !default;
+$dropdown-background-color: transparent !default;
+$dropdown-text-color-hover: $white !default;
+$dropdown-background-color-hover: transparent !default;
+$dropdown-text-color-active: $white !default;
+$dropdown-background-color-active: transparent !default;
+$dropdown-text-color-focus: $white !default;
+$dropdown-background-color-focus: transparent !default;
+
 select {
 	width: 425px;
 	height: 45px;
 	float: left;
 	font-size: $font-size-17;
 	// margin-top: $top-botton-input-margin;
+}
+
+.dropdown {
+    button {
+        background-color: $dropdown-background-color;
+        color: $dropdown-text-color;
+        border: $dropdown-border;
+        
+        &:hover {
+            background-color: $dropdown-background-color-hover;
+            color: $dropdown-text-color-hover;
+            
+            &:active {
+                 background-color: $dropdown-background-color-active;
+                 color: $dropdown-text-color-active;
+                 outline: none;
+            }
+        }
+        
+        &:active {
+            background-color: $dropdown-background-color-active;
+            color: $dropdown-text-color-active;
+            box-shadow: none;
+        }
+        
+        &:focus {
+            background-color: $dropdown-background-color-focus;
+            color: $dropdown-text-color-focus;
+        }
+    }
 }
