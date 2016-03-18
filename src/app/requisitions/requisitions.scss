@@ -16,18 +16,29 @@
             .nav>li {
                 text-align: center;
                 color: $white;
-                padding-top: 20px;
+                
+                &.active {
+                    background-color: lightblue;
+                }
                 
                 &.calendar-filter { 
                     width: 170px;
+                    padding-top: 10px;
                 }
                 
                 &.requisition-filter {
-                    width: 70px;
+                    width: 75px;
+                    font-size: $font-size-12; 
+                    
+                    span.number {
+                        font-size: $font-size-15;
+                    }
                 }
                 
-                &.add-requistion {
+                &.add-requisition {
                     width: 75px;
+                    padding-top: 10px;
+                    font-size: $font-size-24;
                 }
                 
                 > a {
