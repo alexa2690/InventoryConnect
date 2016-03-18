@@ -1,0 +1,44 @@
+@import "../_general";
+
+$table-header-background: #004d66;
+$table-header-font-color:white;
+$row-height : 55px;
+
+table{
+	font-size: $font-size-17;
+
+	thead{
+		background-color: $dark-blue;
+		color: $white;
+	}
+
+	tbody{
+		background-color: $white;		
+			.actionTd{
+				width: 55px;
+				height: 55px;
+			}		
+	}
+
+	.unitTr {
+			height: $row-height;				 
+
+			.firstTd{
+				width: 100%;
+				text-align: left;
+				vertical-align: middle;
+			}
+
+			td {		
+				width: 75px;
+				padding:10px;
+			    text-align:center; 
+	 			vertical-align:middle;
+				input {
+						width: 75px;
+						text-align: center;
+					}
+	 		}
+		}
+
+	}

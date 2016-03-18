@@ -1,0 +1,56 @@
+@import "../_general";
+
+$top-botton-input-padding : 30px;
+$right-left-input-padding : 25px;
+
+.inputElement{
+	margin-right: 15px;
+	font-size: $font-size-17;
+	// margin-top: $top-botton-input-margin;
+	// margin-bottom: $top-botton-input-margin;
+	// font-family: $main-font-style;
+}
+
+textArea {
+	@extend .inputElement;
+	width: 100%;
+	height: 135px;
+}
+
+.rightLabel {
+	@extend .inputElement;
+	float: right;
+	// margin-right: 5px;
+	height: 70px;
+	line-height: 32px;
+}
+
+.leftLabel {
+	@extend .inputElement;
+	float: left;
+	vertical-align: middle;
+}
+
+label{
+	background-color: $green;
+}
+
+.highLightedText{
+	color: $light-blue;
+}
+
+.inputLineGroup{
+	// @extend .inputElement;
+	background-color: $white;	
+	padding-left: $right-left-input-padding;
+	padding-right: $right-left-input-padding;
+	// padding-top: $top-botton-input-padding;
+	padding-bottom: $top-botton-input-padding;
+
+	span {
+		text-align: center;
+		vertical-align: center;
+		font-size: $font-size-17 !important;
+	}
+}
+

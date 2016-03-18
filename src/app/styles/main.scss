@@ -1,0 +1,29 @@
+@import "components/_buttons.scss";
+
+* {
+    font-family: Open Sans Regular;
+}
+
+body {
+  background-color: $light-grey !important;
+}
+
+.content {
+    background-color: $white;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .content {
+        width: $pc-width;
+    }
+}
+
+@media screen and (max-width: 768px) {
+     .content {
+        width: $tablet-width;
+    }
+}
+

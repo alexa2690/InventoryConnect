@@ -1,0 +1,58 @@
+<acme-navbar creation-date="main.creationDate"></acme-navbar>
+<div class="container">
+	<header>Add Requisition</header>
+
+	<div style="padding-top:30px" class="inputLineGroup">
+		
+		<select  class="inputElement" ng-model="ar.CostCenterId"
+		data-ng-options="costCenter.Id as costCenter.Name  for costCenter in ar.costCenters">    
+
+	</select>
+
+	<div>
+		<p  class="input-group">
+			<input type="text" class="form-control datePicker " uib-datepicker-popup="{{ar.format}}" ng-model="ar.dt" is-open="ar.popup2.opened" datepicker-options="ar.dateOptions" ng-required="true" close-text="Close" />
+			<span  class="input-group-btn">
+				<button  type="button" class="btn btn-default datePickerIcon" ng-click="ar.open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+			</span>
+		</p>
+	</div>
+
+	</div>
+
+<div class="inputLineGroup">		
+	<!-- <div> -->
+		<switch  style="float:left ; margin-right:10px;" id="enabled" name="enabled" ng-model="enabled" class="green noFocus"></switch>
+		<span style="line-height:32px;">   Use Template</span>
+	<!-- </div>			 -->
+	<div class="rightLabel">Requisition nr: {{ar.req.Cost}}</div>		
+</div>
+
+<!-- Requisition Items  Table-->
+<add-req-item-table-directive items-list="ar.requisitionItems">
+
+</add-req-item-table-directive>
+
+
+<div class="inputLineGroup">
+		<div class="rightLabel">Total Requisition Cost: {{ar.req.Cost}}</div>	
+</div>
+
+<div class="inputLineGroup">
+	<textarea placeholder="Notes"></textarea>
+</div>
+
+<div class="buttonGroup line">
+	<button class="btn actionButton cancelButton">Cancel</button>
+	<button class="btn actionButton closeButton">Close Requisition</button>
+	<button class="btn actionButton saveButtton">Save</button>
+</div>
+<!-- <br/>
+<br/>
+<br/>
+<br/> -->
+<!-- Testing Directive -->
+
+<!-- <view-table-directive items-list ="ar.requisitionItems"></view-table-directive> -->
+
+</div>

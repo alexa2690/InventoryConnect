@@ -1,0 +1,58 @@
+@import "../_general";
+
+$default-button-witdh :"200px";
+$default-button-height :"45px";
+$button-group-padding : 40px;
+$button-left-padding : 25px;
+
+.buttonGroup{
+	background-color: $red;
+	width: $default-button-witdh;
+	height: $default-button-height;
+	padding-top: $button-group-padding;
+	padding-bottom: $button-group-padding;	
+	display: inline-block;
+}
+
+.baseButton{
+	height: 40px;
+	width: 200px;
+	border-radius: 3px;
+	color: $white;
+	margin-left: $button-left-padding;	
+}
+
+.deleteButton {
+	background-color: $red;
+	width: 40px;
+	color: $white;
+	font-weight: bold;
+}
+
+.addButton {
+	@extend .baseButton;
+	background-color: $green;
+	font-size: $font-size-17;
+	// color: white;
+	margin-left: 0px;
+	// font-weight: bold;
+	width: 100%;
+}
+
+.cancelButton{
+	@extend .baseButton;	
+	background-color: $white;
+	border: none;
+	color: $green;
+	border:solid 1px $blue;
+}
+
+.closeButton{
+	@extend .baseButton;
+	background-color: $blue;
+}
+
+.saveButtton {
+	@extend .baseButton;
+	background-color: $green;
+}
