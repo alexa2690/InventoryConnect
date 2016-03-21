@@ -7,27 +7,27 @@
                     <a href="#/requisitions">Today</a>
                 </li>
                 <li class="requisition-filter">
-                    <a>
+                    <a ng-click="allReqCtrl.filterByState('open')" ng-class="{'selected': allReqCtrl.filtersModel.state === 'open' }">
                         <span class="number">5</span>
                         <br/>
                         Open</a>
                 </li>
                 <li class="requisition-filter">
-                    <a>
+                    <a href="" ng-click="allReqCtrl.filterByState('closed')" ng-class="{'selected' : allReqCtrl.filtersModel.state === 'closed'}">
                         <span class="number">2</span>
                         <br/>
                         Closed
                     </a>
                 </li>
                 <li class="requisition-filter">
-                    <a>
+                    <a ng-click="allReqCtrl.filterByState()" ng-class="{'selected' : allReqCtrl.filtersModel.state === undefined}">
                         <span class="number">7</span>
                         <br/>
-                        All
-                    </a>
+                        All  
+                </a>
                 </li>
                 <li>
-                    <custom-dropdown display-text="'All Cost Centers'" list="vr.costCenters"></custom-dropdown>
+                    <custom-dropdown list="allReqCtrl.costCenters" on-select="allReqCtrl.filterByCostCenter(item)"></custom-dropdown>
                 </li>
             </ul>
             <ul class="nav navbar-nav pull-right">

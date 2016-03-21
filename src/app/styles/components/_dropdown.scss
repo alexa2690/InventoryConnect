@@ -7,8 +7,9 @@ $dropdown-text-color-hover: $white !default;
 $dropdown-background-color-hover: transparent !default;
 $dropdown-text-color-active: $white !default;
 $dropdown-background-color-active: transparent !default;
-$dropdown-text-color-focus: $white !default;
-$dropdown-background-color-focus: transparent !default;
+$dropdown-selected-item-background-color: $blue !default;
+$dropdown-selected-item-text-color: $white !default;
+
 
 select {
 	width: 425px;
@@ -19,31 +20,53 @@ select {
 }
 
 .dropdown {
-    button {
+    > .btn-primary {
         background-color: $dropdown-background-color;
         color: $dropdown-text-color;
         border: $dropdown-border;
         
-        &:hover {
-            background-color: $dropdown-background-color-hover;
-            color: $dropdown-text-color-hover;
-            
-            &:active {
-                 background-color: $dropdown-background-color-active;
-                 color: $dropdown-text-color-active;
-                 outline: none;
-            }
+        i {
+            margin-left: 10px;
+            @extend .fa-caret-down;
         }
         
-        &:active {
+         &:hover {
+                background-color: $dropdown-background-color-hover;
+                color: $dropdown-text-color-hover;
+             }
+    }
+    
+    &.open {
+        > .btn-primary.dropdown-toggle {
             background-color: $dropdown-background-color-active;
             color: $dropdown-text-color-active;
-            box-shadow: none;
+                
+           i {
+               @extend .fa-caret-up;
+           }
         }
         
-        &:focus {
-            background-color: $dropdown-background-color-focus;
-            color: $dropdown-text-color-focus;
+        ul {
+            border-radius: 0px;
+            box-shadow: 0px 0px 6px rgba(0,0,0,0.25);
+            margin-top: 0px;
+            min-width: 300px;
+            padding: 0px;
+            
+            li {
+                font-size: 15px;
+                height: 45px;
+                border-bottom: 1px solid $light-grey;
+                
+                a {
+                   line-height: 40px; 
+                   
+                   &.selected, &.selected:hover {
+                        background-color: $dropdown-selected-item-background-color;
+                        color: $dropdown-selected-item-text-color;
+                    }
+                }
+            }
         }
     }
 }
