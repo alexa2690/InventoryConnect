@@ -1,18 +1,16 @@
 <!-- <acme-navbar creation-date="main.creationDate"></acme-navbar> -->
 <div class="content">
 	<header>Add Requisition</header>
-	<div style="padding-top:30px" class="inputLineGroup">
-		
+	<div style="padding-top:30px" class="inputLineGroup">		
 		<select  class="inputElement" ng-model="addReqCtrl.CostCenterId"
 		data-ng-options="costCenter.Id as costCenter.Name  for costCenter in addReqCtrl.costCenters">    
- 
 	</select>
 
 	<div>
-		<p  class="input-group">
-			<input type="text" class="form-control customDatePicker " uib-datepicker-popup="{{addReqCtrl.format}}" ng-model="addReqCtrl.dt" is-open="addReqCtrl.popup2.opened" datepicker-options="addReqCtrl.dateOptions" ng-required="true" close-text="Close" />
+		<p class="input-group">
+			<input type="text" class="form-control datePicker" uib-datepicker-popup="{{addReqCtrl.format}}" ng-model="addReqCtrl.dt" show-button-bar="false" is-open="addReqCtrl.popup.opened" datepicker-options="addReqCtrl.dateOptions" ng-required="true" close-text="Close" />
 			<span  class="input-group-btn">
-				<button  type="button" class="btn btn-default datePickerIcon" ng-click="addReqCtrl.open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+				<button  type="button" class="btn btn-default datePickerIcon" ng-click="addReqCtrl.open()"><i class="glyphicon glyphicon-calendar"></i></button>
 			</span>
 		</p>
 	</div>
@@ -28,7 +26,7 @@
 	</div>
 
 	<!-- Requisition Items  Table-->
-	<edit-table-directive items-list="addReqCtrl.requisitionItems">
+	<edit-table-directive dropdown-items="addReqCtrl.reqItemTypes" items-list="addReqCtrl.requisitionItems">
 
 	</edit-table-directive>
 

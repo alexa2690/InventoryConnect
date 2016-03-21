@@ -4,7 +4,7 @@ $table-header-background: #004d66;
 $table-header-font-color:white;
 $row-height : 55px;
 
-table{
+table {
 	font-size: $font-size-17;
 
 	thead{
@@ -13,23 +13,14 @@ table{
 	}
 
 	tbody{
-		background-color: $white;		
-			.actionTd{
-				width: 55px;
-				height: 55px;
-			}		
+		background-color: $white;	
 	}
 
-	.unitTr {
+	.unit-tr {
 			height: $row-height;				 
 
-			.firstTd{
-				width: 100%;
-				text-align: left;
-				vertical-align: middle;
-			}
-
-			td {		
+			td {	
+				max-width: 75px;	
 				width: 75px;
 				padding:10px;
 			    text-align:center; 
@@ -38,7 +29,28 @@ table{
 						width: 75px;
 						text-align: center;
 					}
-	 		}
+				}
+
+			.first-td{
+				width: 100% !important;
+				text-align: left;
+				vertical-align: middle;
+				input{
+					width: 100%;
+					text-align: left;
+					outline: none;
+				}
+			}
+
+			.actionTd{
+				width: 55px;
+				height: 55px;
+			}	
+				 		
 		}
+
+
+
+		
 
 	}

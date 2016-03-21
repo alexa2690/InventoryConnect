@@ -22,7 +22,13 @@ $button-left-padding : 25px;
 	margin-left: $button-left-padding;	
 }
 
+.baseButton:hover {
+	opacity: 0.8;
+	color: $white;
+}
+
 .deleteButton {
+	@extend .baseButton;
 	background-color: $red;
 	width: 40px;
 	color: $white;
@@ -45,6 +51,10 @@ $button-left-padding : 25px;
 	border: none;
 	color: $green;
 	border:solid 1px $blue;
+}
+
+.cancelButton:hover{
+	color: $green;
 }
 
 .closeButton{
