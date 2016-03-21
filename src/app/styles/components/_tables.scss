@@ -20,13 +20,15 @@ table {
 			height: $row-height;				 
 
 			td {	
-				max-width: 75px;	
+				// max-width: 75px;	
 				width: 75px;
 				padding:10px;
+				height: $row-height;
 			    text-align:center; 
 	 			vertical-align:middle;
 				input {
-						width: 75px;
+						height: 100%;
+						width: 55px;
 						text-align: center;
 					}
 				}
@@ -38,14 +40,18 @@ table {
 				input{
 					width: 100%;
 					text-align: left;
-					outline: none;
-				}
+					
+				} 
 			}
 
 			.actionTd{
 				width: 55px;
 				height: 55px;
 			}	
+
+			.editable-td{
+				width: 80px;
+			}
 				 		
 		}
 
