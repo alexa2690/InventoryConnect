@@ -37,7 +37,7 @@
         url: '/templates',
         templateUrl: 'app/templates/viewAll/viewTemplates.html',
         controller: 'ViewTemplatesController',
-        controllerAs: 'vt'
+        controllerAs: 'viewTemplCtrl'
       });
 
     $urlRouterProvider.otherwise('/requisition/all');

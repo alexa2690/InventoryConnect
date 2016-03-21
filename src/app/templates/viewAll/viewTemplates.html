@@ -4,12 +4,12 @@
         <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a>All Cost Centers</a>
+                    <custom-dropdown list="viewTemplCtrl.costCenters" on-select="viewTemplCtrl.filterByCostCenter(item)"></custom-dropdown>
                 </li>
             </ul>
         </div>
     </div>
 </div>
-<div>
+<div class="content">
     bla bla content1
 </div>
