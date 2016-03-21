@@ -49,9 +49,7 @@
         vm.dateOptions = {
             dateDisabled: false,
             formatYear: 'yy',
-            // maxDate: new Date(2020, 5, 22),
-            // minDate: new Date(),
-            startingDay: 1,
+            startingDay: 7,
             showWeeks:false
         };
 
@@ -63,8 +61,8 @@
             vm.dt = new Date(year, month, day);
         };
 
-        vm.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-        vm.format = vm.formats[0];
+        vm.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'MM-dd-yyyy', 'shortDate'];
+        vm.format = vm.formats[2];
         vm.altInputFormats = ['M!/d!/yyyy'];
 
         vm.popup = {

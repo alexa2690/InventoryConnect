@@ -15,7 +15,7 @@
 				<td class="first-td">{{reqItem.Name}}</td>
 				<td>{{reqItem.Unit}}</td>
 				<td>{{reqItem.Par}}</td>
-				<td class="editableTd"><input type="text" ng-model="reqItem.Quantity"/></td>
+				<td class="editable-td"><input type="text" ng-model="reqItem.Quantity"/></td>
 				<td></td>
 				<td clas="actionTd" ng-click="removeRequisitionItem(reqItem)"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
 			</tr>
@@ -31,7 +31,7 @@
 				</td>
 				<td>{{currentItem.selected.Unit}}</td>
 				<td>{{currentItem.selected.Par}}</td>
-				<td><input type="number" ng-model="currentItem.selected.Quantity"/></td>
+				<td><input type="text" ng-model="currentItem.selected.Quantity"/></td>
 				<td></td>
 				<td clas="actionTd" ng-click="cancelAddItem()"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
 			</tr>
