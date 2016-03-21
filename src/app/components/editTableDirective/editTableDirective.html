@@ -2,23 +2,40 @@
 	<table class="table table-stripped">
 		<thead>
 			<tr class="unitTr">
-				<td class="firstTd">Item name</td>
+				<td class="first-td">Item name</td>
 				<td>Unit</td>
 				<td>Par</td>
 				<td>Qty</td>
-				<td class="editableTd">Total Cost</td>
+				<td class="editableTd">Total</td>
 				<td style="width:45px"></td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-if="itemsList.length>0" class="unitTr" ng-repeat="reqItem in itemsList">
-				<td class="firstTd">{{reqItem.Name}}</td>
+			<tr ng-if="itemsList.length > 0" class="unit-tr" ng-repeat="reqItem in itemsList">
+				<td class="first-td">{{reqItem.Name}}</td>
 				<td>{{reqItem.Unit}}</td>
 				<td>{{reqItem.Par}}</td>
 				<td class="editableTd"><input type="text" ng-model="reqItem.Quantity"/></td>
-				<td>{{reqItem.Name}}</td>
+				<td></td>
 				<td clas="actionTd" ng-click="removeRequisitionItem(reqItem)"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
 			</tr>
+			<tr class="unit-tr" ng-if="showAddRow">
+				<td class="first-td">
+					  <ui-select required ng-model="currentItem.selected" theme="bootstrap">
+					    <ui-select-match placeholder="Select or search a Request Item...">{{$select.selected.Name}}
+					  </ui-select-match>
+					    <ui-select-choices repeat="item in dropdownItems | filter: $select.search">
+					      <div ng-bind-html="item.Name | highlight: $select.search"></div>					      
+					    </ui-select-choices>
+					  </ui-select>
+				</td>
+				<td>{{currentItem.selected.Unit}}</td>
+				<td>{{currentItem.selected.Par}}</td>
+				<td><input type="number" ng-model="currentItem.selected.Quantity"/></td>
+				<td></td>
+				<td clas="actionTd" ng-click="cancelAddItem()"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
+			</tr>
+
 
 		</tbody>
 

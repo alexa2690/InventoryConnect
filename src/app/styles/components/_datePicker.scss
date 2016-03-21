@@ -1,3 +1,5 @@
+@import "../_general";
+
 .datePickerIcon{
 	height: 45px;
 	width: 45px;
@@ -6,4 +8,58 @@
 .datePicker{
 	width: 200px;
 	height: 45px;
+}
+
+
+.uib-datepicker :focus{
+	outline: none;
+}
+
+.uib-datepicker-popup {
+
+	padding: 10px;
+	// font-size: $font-size-17;	
+	.btn-default {
+		border: none;
+		// color: $grey;
+	}
+
+
+	button{
+		.uib-title {
+			color: $dark-blue !important;
+
+		}
+		strong {
+			font-family: $main-font-family;
+			font-size: $font-size-17;
+			color: $blue;
+		}
+	}
+
+	.btn-info {
+		background-color: $dark-blue;
+		color: $white;
+
+	}
+
+	.btn-info:hover {
+		background-color: $blue;
+	}
+
+	table {
+		thead {
+
+			background-color: $white;		
+			color: $grey;
+			font-family: $main-font-family;			
+			tr {
+				small{
+					font-size: $font-size-17;
+					font-weight: normal;
+				}
+			}
+		}
+
+	}
 }
