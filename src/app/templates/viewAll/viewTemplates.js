@@ -44,7 +44,6 @@
             if(costCenter !== undefined) {
                vm.filtersModel.costCenter = costCenter.name;
             }
-            console.log(costCenter.name);
         }
     }
 })();
