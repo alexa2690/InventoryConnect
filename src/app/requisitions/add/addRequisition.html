@@ -9,7 +9,8 @@
 
 			<div>
 				<p class="input-group">
-					<input type="text" class="form-control datePicker" uib-datepicker-popup="{{addReqCtrl.format}}" ng-model="addReqCtrl.dt" show-button-bar="false" is-open="addReqCtrl.popup.opened" datepicker-options="addReqCtrl.dateOptions" ng-required="true" close-text="Close" />
+					<input type="text" class="form-control datePicker" uib-datepicker-popup="{{addReqCtrl.format}}" ng-model="addReqCtrl.dt" show-button-bar="false" is-open="addReqCtrl.popup.opened" datepicker-options="addReqCtrl.dateOptions" ng-required="true" close-text="Close"
+					ng-change="selectDate(addReqCtrl.dt)" />
 					<span  class="input-group-btn">
 						<button  type="button" class="btn btn-default datePickerIcon" ng-click="addReqCtrl.open()"><i class="glyphicon glyphicon-calendar"></i></button>
 					</span>
@@ -46,6 +47,9 @@
 				<button class="btn actionButton closeButton">Close Requisition</button>
 				<button class="btn actionButton saveButtton">Save</button>
 			</div>
+			<hr/>
+		 <!--   Week Period 
+			<input ng-model="formData.dueDate" type="button" id="dueDate" name="dueDate" class="form-control" datepicker-options="dateOptions" datepicker-popup="MM-dd-yyyy" datepicker-append-to-body="true" is-open="data.isOpen" min-mode="week" datepicker-mode="day"	show-button-bar="false" ng-click="data.isOpen = true"/> -->
 
 		</div>	
 </div>

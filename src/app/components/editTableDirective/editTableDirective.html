@@ -36,6 +36,11 @@
 				<td clas="actionTd" ng-click="cancelAddItem()"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
 			</tr>
 
+			<tr ng-show="itemsList.length == 0">
+				<td colspan ="5">
+					No Requisition Items
+				</td>
+			</tr>
 
 		</tbody>
 

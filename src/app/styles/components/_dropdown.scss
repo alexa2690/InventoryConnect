@@ -19,7 +19,7 @@ select {
 	// margin-top: $top-botton-input-margin;
 }
 
-.dropdown {
+.dropdown.special-dropdown {
     > .btn-primary {
         background-color: $dropdown-background-color;
         color: $dropdown-text-color;
@@ -39,8 +39,7 @@ select {
     &.open {
         > .btn-primary.dropdown-toggle {
             background-color: $dropdown-background-color-active;
-            color: $dropdown-text-color-active;
-                
+            color: $dropdown-text-color-active;                
            i {
                @extend .fa-caret-up;
            }
