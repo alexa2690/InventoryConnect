@@ -1,0 +1,11 @@
+	<div>
+		<p class="input-group">
+			<input type="text" class="form-control datePicker" uib-datepicker-popup="{{dateFormat}}" ng-model="currentDate" show-button-bar="true" is-open="popup.opened" datepicker-options="datePickerOptions" 
+ 			datepicker-mode="datePickerMode"
+			ng-required="true" close-text="Close"
+			ng-change="selectDate(currentDate)" />
+			<span  class="input-group-btn">
+				<button  type="button" class="btn btn-default datePickerIcon" ng-click="open()"><i class="fa fa-calendar"></i></button>
+			</span>
+		</p>
+	</div>

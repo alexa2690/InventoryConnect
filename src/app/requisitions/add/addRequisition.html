@@ -1,4 +1,3 @@
-<!-- <acme-navbar creation-date="main.creationDate"></acme-navbar> -->
 <div style="margin:10px">
 	<header>Add Requisition</header>
 	<div class="content">
@@ -12,7 +11,7 @@
 					<input type="text" class="form-control datePicker" uib-datepicker-popup="{{addReqCtrl.format}}" ng-model="addReqCtrl.dt" show-button-bar="false" is-open="addReqCtrl.popup.opened" datepicker-options="addReqCtrl.dateOptions" ng-required="true" close-text="Close"
 					ng-change="selectDate(addReqCtrl.dt)" />
 					<span  class="input-group-btn">
-						<button  type="button" class="btn btn-default datePickerIcon" ng-click="addReqCtrl.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+						<button  type="button" class="btn btn-default datePickerIcon" ng-click="addReqCtrl.open()"><i class="fa fa-calendar"></i></button>
 					</span>
 				</p>
 			</div>
@@ -48,8 +47,8 @@
 				<button class="btn actionButton saveButtton">Save</button>
 			</div>
 			<hr/>
-		 <!--   Week Period 
-			<input ng-model="formData.dueDate" type="button" id="dueDate" name="dueDate" class="form-control" datepicker-options="dateOptions" datepicker-popup="MM-dd-yyyy" datepicker-append-to-body="true" is-open="data.isOpen" min-mode="week" datepicker-mode="day"	show-button-bar="false" ng-click="data.isOpen = true"/> -->
+
+<!-- 			<date-picker-directive date-picker-options = "addReqCtrl.dateOptionsTest" date-format ="MM-dd-yyyy" current-date="addReqCtrl.dt"></date-picker-directive> -->
 
 		</div>	
 </div>

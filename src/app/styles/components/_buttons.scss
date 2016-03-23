@@ -5,6 +5,28 @@ $default-button-height :"45px";
 $button-group-padding : 40px;
 $button-left-padding : 25px;
 
+.btn {
+	border-radius: 0;
+}
+
+.btn-default:hover{
+	background-color: $white;
+}
+
+
+.btn-default:focus{
+	background-color: $white;
+}
+
+.btn-default:active{
+	background-color: $white;
+}
+
+
+.form-control {
+	border-radius: 0;
+}
+
 .buttonGroup{
 	background-color: $white;
 	width: $default-button-witdh;
@@ -20,6 +42,7 @@ $button-left-padding : 25px;
 	border-radius: 3px;
 	color: $white;
 	margin-left: $button-left-padding;	
+	border-radius: 0;
 }
 
 .baseButton:hover {
@@ -49,7 +72,7 @@ $button-left-padding : 25px;
 	@extend .baseButton;	
 	background-color: $white;
 	border: none;
-	color: $green;
+	color: $blue;
 	border:solid 1px $blue;
 }
 
