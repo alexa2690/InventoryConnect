@@ -1,22 +1,22 @@
 @import "../_general";
 
-$table-header-background: $table-header-background !default;
-$table-header-font-color:white;
+$requisition-table-header-background: $dark-blue !default;
+$table-header-font-color: $white !default;
 $row-height : 55px;
 
-table {
-	font-size: $font-size-17;
+.requisitions-table {
+    font-size: $font-size-17;
+    
+    thead {
+		background-color: $requisition-table-header-background;
+		color: $table-header-font-color;
 
-	thead{
-		background-color: $table-header-background;
-		color: $white;
-
-		td, th {
+		tr td,tr th {
 		   border:none;
 		}
 	}
-
-	tbody{
+    
+    tbody{
 		background-color: $white;	
 	}
 
@@ -28,44 +28,43 @@ table {
 
 
 	.unit-tr {
-			height: $row-height;				 
+        height: $row-height;				 
 
-			td {	
-				// max-width: 75px;	
-				width: 75px;
-				padding:10px;
-				height: $row-height;
-			    text-align:center; 
-	 			vertical-align:middle;
-				input {
-						height: 100%;
-						width: 55px;
-						text-align: center;
-					}
-				}
+        td {	
+            // max-width: 75px;	
+            width: 75px;
+            padding:10px;
+            height: $row-height;
+            text-align:center; 
+            vertical-align:middle;
+            input {
+                    height: 100%;
+                    width: 55px;
+                    text-align: center;
+                }
+            }
 
-			.first-td{
-				width: 100% !important;
-				text-align: left;
-				vertical-align: middle;
-				input{
-					width: 100%;
-					text-align: left;
-					
-				} 
-			}
+        .first-td{
+            width: 100% !important;
+            text-align: left;
+            vertical-align: middle;
+            input{
+                width: 100%;
+                text-align: left;
+                
+            } 
+        }
 
-			.actionTd{
-				width: 55px;
-				height: 55px;
-			}	
+        .actionTd{
+            width: 55px;
+            height: 55px;
+        }	
 
-			.editable-td{
-				width: 80px;
-			}
-				 		
-		}
-	}
+        .editable-td{
+            width: 80px;
+        }
+    }
+}
 
 .table-view {
     font-size: $font-size-15;
@@ -108,6 +107,12 @@ table {
         overflow-y: auto;
         
         .table-row {
+            height: 70px;
+            border-bottom: 1px solid $light-grey;
+        }
+        
+        .no-items {
+            text-align: center;
             height: 70px;
             border-bottom: 1px solid $light-grey;
         }

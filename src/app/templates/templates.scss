@@ -8,19 +8,15 @@
 
 .templates {
     .name {
-        width: 40%;
+        @extend .ellipsis;
         padding: 0 10px 0px 20px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
+        width: 40%;
     }
     
     .cost-center {
+        @extend .ellipsis;
         width: 20%;
         padding-right: 10px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
     }
     
     .created-date {
@@ -46,11 +42,6 @@
             .cost-center, .user {
                 color: $blue;
             }
-        }
-    
-        .no-templates {
-            text-align: center;
-            padding: 15px 0px;
         }
     }
 }
