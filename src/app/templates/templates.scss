@@ -1,5 +1,56 @@
 .header-filters {
-    .nav {
-        margin-left: 15px;
+    .custom-dropdown {
+        button {
+            padding-left: 25px;
+        }
+    }
+}
+
+.templates {
+    .name {
+        width: 40%;
+        padding: 0 10px 0px 20px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .cost-center {
+        width: 20%;
+        padding-right: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .created-date {
+        width:15%;
+    }
+    
+    .created-by {
+        width: 20%;
+    }
+    
+    .table-header {
+        .name {
+            padding-left: 20px;
+        }
+    }
+    
+    tbody {
+        .table-row {
+            .name {
+                font-size: $font-size-17;
+            }
+            
+            .cost-center, .user {
+                color: $blue;
+            }
+        }
+    
+        .no-templates {
+            text-align: center;
+            padding: 15px 0px;
+        }
     }
 }

@@ -1,5 +1,6 @@
 @import "styles/_general.scss";
 $dropdown-background-color-active : $darkest-blue;
+$table-header-background: $white;
 
 .header-filters {
     background-color: $dark-blue;
@@ -60,11 +61,10 @@ $dropdown-background-color-active : $darkest-blue;
                     }
                 }
                 
-                .dropdown {
+                .custom-dropdown {
                     font-size: $font-size-12;
                     height: 70px;
                     min-width: 160px;
-                    
                     
                     button {
                         height: inherit;
@@ -86,6 +86,82 @@ header {
 	padding: 20px;
 }
 
+.requisitions {
+    .cost-center {
+        width: 50%;
+        padding: 0 10px 0px 20px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .req-date {
+        width: 20%;
+        span {
+            display: block;
+            margin-top: 2px;
+        }
+    } 
+
+    .requisition-no {
+        width: 10%;
+    }
+    
+    .modified {
+        width: 20%;
+    } 
+    
+    .table-header {
+        .cost-center {
+            padding-left: 20px;
+        }
+    }
+    
+    tbody {
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+        .requisition {
+            &.closed {
+                background-color: $light-grey-2;
+                
+                .cost-center .status {
+                    background-color: $green;
+                }
+            }
+            
+        .cost-center {
+            font-size: $font-size-17;
+            
+            .status {
+                font-size: $font-size-10;
+                font-weight: 600;
+                padding: 4px 6px;
+                background-color: $red;
+                color: $white;
+                border-radius: 4px;
+                text-align: center;
+                width: 50px;
+            }
+            }
+            
+            .requisition-no {
+                color: $blue;
+            }
+                
+            .user {
+                color: $blue;
+            }
+        }
+        
+        .no-requisitions {
+            text-align: center;
+            padding: 15px 0px;
+        }
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .header-filters,
     .header-filters .container {
@@ -97,5 +173,16 @@ header {
      .header-filters,
      .header-filters .container {
         width: $tablet-width;
+    }
+    
+    .modified {
+        .closed-by {
+            display: inline-block;
+        }
+        i {
+            position: absolute;
+            top: 165px;
+            right: 30px;
+        }
     }
 }

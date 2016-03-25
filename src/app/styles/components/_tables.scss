@@ -1,6 +1,6 @@
 @import "../_general";
 
-$table-header-background: #004d66;
+$table-header-background: $table-header-background !default;
 $table-header-font-color:white;
 $row-height : 55px;
 
@@ -8,7 +8,7 @@ table {
 	font-size: $font-size-17;
 
 	thead{
-		background-color: $dark-blue;
+		background-color: $table-header-background;
 		color: $white;
 
 		td, th {
@@ -58,9 +58,51 @@ table {
 			}
 				 		
 		}
-
-
-
-		
-
 	}
+
+.table-view {
+    font-size: $font-size-15;
+    width: 100%;
+    table-layout: fixed;
+    
+    .table-header {
+        border-bottom: 1px solid $light-grey; 
+        
+        td {
+            padding: 10px 0px;
+        }
+        
+        a {
+            color: $black;
+            text-decoration: none;
+            outline: none;
+            
+            i {
+                color: $grey;
+            }
+            
+            &.reverse {
+                i {
+                    @extend .fa-caret-up;
+                }
+            }
+            
+            &.selected {
+                i {
+                    @extend .fa-caret-down;
+                    color: $blue;
+                }
+            }
+        }
+    }
+    
+    tbody {
+        height: 100%;
+        overflow-y: auto;
+        
+        .table-row {
+            height: 70px;
+            border-bottom: 1px solid $light-grey;
+        }
+    }
+}
