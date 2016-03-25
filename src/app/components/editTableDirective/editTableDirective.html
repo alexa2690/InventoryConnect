@@ -1,7 +1,7 @@
 <div>
 	<table class="table requisitions-table">
 		<thead>
-			<tr class="unitTr">
+			<tr class="unit-tr">
 				<td class="first-td">Item name</td>
 				<td class="select-td">Package Size</td>
 				<td>Par</td>
@@ -25,9 +25,9 @@
 					<button class="btn delete-button"><i class="fa fa-times"></i></button>
 				</td>
 			</tr>
-			<tr  ng-if="itemsList.length == 0">
-				<td colspan="6">
-					No Items
+			<tr class="empty-table" ng-if="itemsList.length == 0">
+				<td  colspan="6">
+					No Requisition Items
 				</td>
 			</tr>
 

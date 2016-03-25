@@ -1,5 +1,5 @@
 <div>
-	<table>
+	<table class="table requisitions-table">
 
 		<thead>
 			<tr class="unitTr">
@@ -10,12 +10,19 @@
 			</tr>
 		</thead>	
 
-		<body>			
-			<tr ng-repeat = "item in itemsList" class="unit-header-tr">
+		<body>
+
+			<tr ng-if="itemsList.length > 0" ng-repeat = "item in itemsList" class="unit-tr">
 				<td>{{item.Name}}</td>
 				<td>{{item.Unit}}</td>
 				<td>{{item.Qty}}</td>
 				<td>{{item.Total}}</td>
+			</tr>
+
+			<tr class="empty-table" ng-if="itemsList==undefined || itemsList.length == 0">
+				<td  colspan="4">
+					No Requisition Items
+				</td>
 			</tr>
 		</body>
 	</table>

@@ -28,8 +28,20 @@
 			<edit-table-directive ng-switch-when = "Open" dropdown-items="viewReqCtrl.reqItems" items-list="viewReqCtrl.requisition.RequisitionItems">
 			</edit-table-directive>	
 
-			<edit-table-directive ng-switch-when = "Closed" dropdown-items="viewReqCtrl.reqItems" items-list="viewReqCtrl.requisition.RequisitionItems">
-			</edit-table-directive>		
+			<view-table-directive ng-switch-when = "Closed" dropdown-items="viewReqCtrl.reqItems" items-list="viewReqCtrl.requisition.RequisitionItems">
+			</view-table-directive>		
 	</div>	
+
+	<div class="input-group-grey">
+					<div style="padding-top:15px;" class="right-label">Total Requisition Cost: {{addReqCtrl.req.Cost}}</div>	
+			</div>
+
+			<div class="clear-float"></div>
+
+			<div class="input-group-grey" style="">
+				<view-collapse-content-directive title ="Notes" >			 
+					<textarea placeholder="Notes"></textarea>			
+				</view-collapse-content-directive>				
+			</div>
 
 </div>
