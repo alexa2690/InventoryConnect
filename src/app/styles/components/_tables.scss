@@ -5,6 +5,8 @@ $table-header-font-color: $white !default;
 $row-height : 55px;
 
 .requisitions-table {
+	margin-bottom: 0;
+
     font-size: $font-size-17;
     
     thead {
