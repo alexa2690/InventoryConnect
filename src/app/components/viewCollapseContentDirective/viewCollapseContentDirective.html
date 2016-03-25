@@ -1,0 +1,11 @@
+<div ng-click = "toggleContent()" style="outline:none;">
+	<div
+ 		style = "text-align:center; height:45px ; line-height:45px;">
+ 		<span class="disable-select" style="padding:10px; height:45px;"><i class="fa fa-comment "></i>&nbsp;&nbsp;&nbsp;&nbsp;{{isContentVisible ? 'Hide ' : 'Show '}} {{title}}</span>
+	</div>  	
+	<div ng-show = "isContentVisible">
+		<ng-transclude>
+
+		 <ng-transclude> 
+	</div>
+</div>

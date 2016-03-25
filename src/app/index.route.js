@@ -24,7 +24,7 @@
               url: '/add',
               templateUrl: 'app/requisitions/add/addRequisition.html',
               controller: 'AddRequisitionController',
-              controllerAs: 'addReqCtrl'
+              controllerAs: 'addReqCtrl'    
             })
             .state('requisitions.view', {
               url: '/view',
@@ -32,6 +32,7 @@
               controller: 'ViewRequisitionController',
               controllerAs: 'viewReqCtrl'
             })
+            
 
       .state('templates', {
         url: '/templates',

@@ -1,27 +1,33 @@
 <div>
-	<table class="table table-bordered">
+	<table class="table">
 		<thead>
 			<tr class="unitTr">
 				<td class="first-td">Item name</td>
-				<td>Unit</td>
+				<td class="select-td">Package Size</td>
 				<td>Par</td>
 				<td>Qty</td>
 				<td class="editableTd">Total</td>
-				<td style="width:45px"></td>
+				<td class="action-td"></td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-if="itemsList.length > 0" class="unit-tr" ng-repeat="reqItem in itemsList">
+			<tr ng-if="itemsList.length > 0" class="unit-header-tr" ng-repeat="reqItem in itemsList">
 				<td class="first-td">{{reqItem.Name}}</td>
-				<td>{{reqItem.Unit}}</td>
+				<td class="select-td">
+				<select  style="width:120px;height:35px;border:none" ng-model="reqItem.Id"
+					data-ng-options="package.Id as package.Name  for package in packageSizes">    
+				</select>
+				</td>
 				<td>{{reqItem.Par}}</td>
 				<td class="editableTd"><input type="text" ng-model="reqItem.Quantity"/></td>
-				<td></td>
-				<td clas="actionTd" ng-click="removeRequisitionItem(reqItem)"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
+				<td class="editable-td">{{reqItem.Total | currency }}</td>
+				<td clas="actionTd" ng-click="removeRequisitionItem(reqItem)">
+					<button class="btn delete-button"><i class="fa fa-times"></i></button>
+				</td>
 			</tr>
-			<tr class="unit-tr" ng-if="showAddRow">
+			<tr ng-form="reqItemForm" class="unit-tr" ng-if="showAddRow">
 				<td class="first-td">
-					  <ui-select required ng-model="currentItem.selected" theme="bootstrap">
+					  <ui-select required on-select="onSelectCallback($item, $model)" ng-model="currentItem" theme="bootstrap">
 					    <ui-select-match placeholder="Select or search a Request Item...">{{$select.selected.Name}}
 					  </ui-select-match>
 					    <ui-select-choices repeat="item in dropdownItems | filter: $select.search">
@@ -29,19 +35,21 @@
 					    </ui-select-choices>
 					  </ui-select>
 				</td>
-				<td>{{currentItem.selected.Unit}}</td>
-				<td>{{currentItem.selected.Par}}</td>
-				<td><input type="number" ng-model="currentItem.selected.Quantity"/></td>
-				<td></td>
-				<td clas="actionTd" ng-click="cancelAddItem()"><button class="btn deleteButton"><i class="fa fa-times"></i></button></td>
+				<td class="select-td">
+				<select  style="width:120px;height:35px;" required ng-model="currentItem.Id"
+					data-ng-options="package.Id as package.Name  for package in packageSizes">    
+				</select>
+				</td>
+				<td>{{currentItem.Par}}</td>
+				<td><input type="number" required ng-model="currentItem.Quantity"/></td>
+				<td class="editable-td">
+					{{currentItem.Total  | currency:" $"}}</td>
+				<td class="action-td"  ><button ng-click="addItem()" ng-disabled="reqItemForm.$invalid" class="btn check-button"><i class="fa fa-check"></i></button></td>
 			</tr>
-
-
 		</tbody>
-
 	</table>
 
 	<div class="line">
-		<button ng-click="addRequisitionItem()" class="btn addButton"><i class="fa fa-plus"></i> Add Item</button>
+		<button ng-disabled="showAddRow" ng-click="addRequisitionItem()" class="btn addButton"><i class="fa fa-plus"></i> Add Item</button>
 	</div>
 </div>

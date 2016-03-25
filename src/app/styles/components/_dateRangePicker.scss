@@ -1,0 +1,38 @@
+@import "../_general";
+
+.daterangepicker {
+	
+	td,th {
+		border-radius: 0;
+	}
+
+	td.in-range {
+		background-color: $blue;		
+	}
+
+	td.active {
+		background-color: $blue;
+	}
+
+	.input-mini,.input-mini.active {
+		border-radius: 0;
+	}
+}
+
+.date-picker {
+	background-color: $dark-blue;
+	color: $white;
+	width: 150px;
+	height: 70px;
+}
+
+.date-range-picker-wrap {
+	position: relative;
+	width: 150px;
+		i {
+			position: absolute;
+			top: 40%;
+			right: 5px;
+			color: $white;
+		}
+}

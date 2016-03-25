@@ -23,8 +23,14 @@
 		
 	</div>	
 
-	<add-req-item-table-directive items-list="requisitionCtrl.requisitionItems">
+	<div ng-switch on="requsition.Status">
+		<div ng-switch-when = "Opened">
+				<add-req-item-table-directive items-list="requisitionCtrl.requisitionItems">
+				</add-req-item-table-directive>
+		</div>
+		<div ng-switch-when = "Closed">
 
-	</add-req-item-table-directive>
+		</div>
+	</div>	
 
 </div>

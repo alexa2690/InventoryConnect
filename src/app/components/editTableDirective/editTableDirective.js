@@ -17,21 +17,22 @@
                 dropdownItems : '='
     		},
             link : function($scope,$element, $attrs, $controller){
-
-                    //scope methods
-                    //todo: call controller method
-                    $scope.showAddRow = false;                    
+                    $scope.packageSizes = [
+                    {
+                        Id:1,
+                        Name:'pack'                           
+                    },
+                    {
+                        Id:2,
+                        Name:'unit'                           
+                    }
+                    ]
                     $scope.currentItem = {};
-                    
-
+                    $scope.showAddRow = false;             
+                    //todo:call controller methods
                     $scope.addRequisitionItem = function(){
-                        //todo: call controller method
-                        if($scope.showAddRow){
-                            var newItem = angular.copy($scope.currentItem.selected);
-                            $scope.itemsList.push(newItem)
-                        }
-                        $scope.currentItem = {};
-                        $scope.showAddRow = true;
+                        $scope.showAddRow = true;    
+                        $scope.currentItem = {};                    
                     }
 
                     $scope.removeRequisitionItem = function(reqItem){
@@ -40,22 +41,30 @@
                         $scope.itemsList.splice(index,1);
                     }
 
-                    $scope.cancelAddItem = function(){
-                        $scope.currentItem = {};
+                    $scope.cancelAddItem = function(){                        
                         $scope.showAddRow = false;
+                        $scope.currentItem = {};
                     }
 
-                    $scope.$watch('currItemId',function(){
-                        console.log($scope.currItemId);
-                    })
+
+                    $scope.onSelectCallback =  function(item,model){
+
+                        $scope.currentItem.Name =  item.Name;
+                        $scope.currentItem.Total =  item.Total;
+                        $scope.currentItem.Par =  item.Par;
+                    } 
+
+                    $scope.addItem = function(){                        
+                        $scope.itemsList.push($scope.currentItem);  
+                        $scope.showAddRow = false;                      
+                    }
 
                     function RequisitionItem(name,unit,par,qty){
                         this.Name = name;
                         this.Unit = unit;
                         this.Par = par;
                         this.Quantity = qty;
-                    }               
-      
+                    }                     
             }
     	};
 

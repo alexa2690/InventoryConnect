@@ -1,0 +1,23 @@
+<div>
+	<table>
+
+		<thead>
+			<tr class="unitTr">
+				<td class="first-td">Item name</td>
+				<td class="select-td">Package Size</td>				
+				<td>Qty</td>
+				<td class="editableTd">Total</td>				
+			</tr>
+		</thead>	
+
+		<body>			
+			<tr ng-repeat = "item in itemsList" class="unit-header-tr">
+				<td>{{item.Name}}</td>
+				<td>{{item.Unit}}</td>
+				<td>{{item.Qty}}</td>
+				<td>{{item.Total}}</td>
+			</tr>
+		</body>
+	</table>
+
+</div>

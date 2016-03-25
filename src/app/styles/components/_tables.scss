@@ -4,32 +4,33 @@ $table-header-background: #004d66;
 $table-header-font-color:white;
 $row-height : 55px;
 
+.table{
+	margin-bottom: 0;	
+}
+
+
+
 table {
 	font-size: $font-size-17;
 
 	thead{
 		background-color: $dark-blue;
 		color: $white;
-
-		td, th {
-		   border:none;
-		}
 	}
 
 	tbody{
-		background-color: $white;	
+		background-color: $white;		
 	}
+
 
 	.unit-tr {
 			height: $row-height;				 
-
-			td {	
-				// max-width: 75px;	
-				width: 75px;
+			td {					
+				width: 75px;			
 				padding:10px;
 				height: $row-height;
 			    text-align:center; 
-	 			vertical-align:middle;
+	 			vertical-align:middle !important;
 				input {
 						height: 100%;
 						width: 55px;
@@ -48,19 +49,28 @@ table {
 				} 
 			}
 
-			.actionTd{
-				width: 55px;
-				height: 55px;
+			.action-td{
+				width: 45px;
+				height: 45px ;
 			}	
 
 			.editable-td{
 				width: 80px;
 			}
+
+			.select-td {
+				width: 120px;
+			}
 				 		
 		}
 
-
-
-		
+	.unit-header-tr {
+		@extend  .unit-tr;
+			td {
+				border: 1px solid $grey;
+                vertical-align: center;
+                text-align: center;
+			}
+	}
 
 	}

@@ -2,7 +2,7 @@
 	<header>Add Requisition</header>
 	<div class="content">
 		<div style="padding-top:30px" class="inputLineGroup">		
-				<select  class="inputElement" ng-model="addReqCtrl.CostCenterId"
+			<select  class="inputElement" ng-model="addReqCtrl.CostCenterId"
 				data-ng-options="costCenter.Id as costCenter.Name  for costCenter in addReqCtrl.costCenters">    
 			</select>
 
@@ -18,38 +18,47 @@
 
 			</div>
 
-			<div class="inputLineGroup">		
+			<div class="switch-row">		
 				<!-- <div> -->
 					<switch  style="float:left ; margin-right:10px;" id="enabled" name="enabled" ng-model="enabled" class="green noFocus"></switch>
 					<span style="line-height:32px;">   Use Template</span>
 				<!-- </div>			 -->
-				<div class="rightLabel">Requisition nr: {{addReqCtrl.req.Cost}}</div>		
+				<div class="right-label">Req. {{addReqCtrl.req.Cost}}</div>		
 			</div>
 
 			<!-- Requisition Items  Table-->
-			<edit-table-directive dropdown-items="addReqCtrl.reqItemTypes" items-list="addReqCtrl.requisitionItems">
+			<edit-table-directive dropdown-items="addReqCtrl.reqItems" items-list="addReqCtrl.requisitionItems">
 
 			</edit-table-directive>
 
 
-			<div class="inputLineGroup">
-					<div class="rightLabel">Total Requisition Cost: {{addReqCtrl.req.Cost}}</div>	
+			<div class="input-group-grey">
+					<div style="padding-top:15px;" class="right-label">Total Requisition Cost: {{addReqCtrl.req.Cost}}</div>	
 			</div>
 
-			<div class="inputLineGroup">
-				<textarea placeholder="Notes"></textarea>
+			<div class="clear-float"></div>
+
+			<div class="input-group-grey" style="">
+				<view-collapse-content-directive title ="Notes" >			 
+					<textarea placeholder="Notes"></textarea>			
+				</view-collapse-content-directive>				
 			</div>
 
-			<div class="buttonGroup line">
+			<div class="buttonGroup">
 				<button ui-sref ="requisitions.all"  class="btn actionButton cancelButton">Cancel</button>
-
 				<button class="btn actionButton closeButton">Close Requisition</button>
 				<button class="btn actionButton saveButtton">Save</button>
 			</div>
 			<hr/>
 
-<!-- 			<date-picker-directive date-picker-options = "addReqCtrl.dateOptionsTest" date-format ="MM-dd-yyyy" current-date="addReqCtrl.dt"></date-picker-directive> -->
 
+			<div class="inputLineGroup">	
+				<div class="date-range-picker-wrap">
+					<textarea style="text-align:center;" date-range-picker range-picker-formatter-directive date-range-picker options="{locale: {format: 'MMMM D, YYYY'}}"  class="form-control date-picker" type="text" ng-model="datePicker.date " cols="10" rows="2" wrap ="hard">
+				</textarea>	
+				<i  class="fa fa-caret-down" ></i>		
+				</div>							
+			</div>
 		</div>	
 </div>
 
