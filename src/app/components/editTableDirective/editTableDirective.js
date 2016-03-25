@@ -54,7 +54,10 @@
                         $scope.currentItem.Par =  item.Par;
                     } 
 
-                    $scope.addItem = function(){                        
+                    $scope.addItem = function(){         
+                        if($scope.itemsList == undefined){
+                            $scope.itemsList = [];
+                        }               
                         $scope.itemsList.push($scope.currentItem);  
                         $scope.showAddRow = false;                      
                     }

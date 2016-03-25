@@ -17,6 +17,8 @@
 	.input-mini,.input-mini.active {
 		border-radius: 0;
 	}
+
+
 }
 
 .date-picker {
@@ -24,6 +26,8 @@
 	color: $white;
 	width: 150px;
 	height: 70px;
+	border: none;
+	outline: none;
 }
 
 .date-range-picker-wrap {
@@ -35,4 +39,11 @@
 			right: 5px;
 			color: $white;
 		}
+		textarea {
+			resize:none;			
+			&:focus{
+				box-shadow: none;
+			}
+		}
+
 }

@@ -1,6 +1,6 @@
 <div>
 	<table class="table">
-		<thead>
+		<thead class="req-item-table-header">
 			<tr class="unitTr">
 				<td class="first-td">Item name</td>
 				<td class="select-td">Package Size</td>
@@ -25,6 +25,12 @@
 					<button class="btn delete-button"><i class="fa fa-times"></i></button>
 				</td>
 			</tr>
+			<tr  ng-if="itemsList.length == 0">
+				<td colspan="6">
+					No Items
+				</td>
+			</tr>
+
 			<tr ng-form="reqItemForm" class="unit-tr" ng-if="showAddRow">
 				<td class="first-td">
 					  <ui-select required on-select="onSelectCallback($item, $model)" ng-model="currentItem" theme="bootstrap">

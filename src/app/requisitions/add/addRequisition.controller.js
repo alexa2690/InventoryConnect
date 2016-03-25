@@ -10,6 +10,7 @@ AddRequisitionController.$inject = ['$scope','RequisitionService'];
  function AddRequisitionController($scope,RequisitionService){
        var vm = this;
        vm.reqItems = RequisitionService.getRequisitonItems();
+       
        vm.requisitionItems = [];
 
        vm.costCenters = [

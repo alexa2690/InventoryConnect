@@ -1,36 +1,35 @@
 <div class="content">
-	<header>Requisition Name</header>
+	<header>{{viewReqCtrl.requisition.costCenter}}</header>
 
 	<!-- //todo:  create directiv for table -->
-	<div class="inputLineGroup">
-		<div class="leftLabel">
-			Jan 20 2016 <label class="label">Closed</label>
+	<div class="requisition-tile-info">
+		<div class="left-label">
+			{{viewReqCtrl.requisition.reqDate |  date:'MMM-dd-yyyy'}} &nbsp;
+			 <label class="label">{{viewReqCtrl.requisition.status}}</label>
 		</div>
 
-		<div class="rightLabel">
-			<span class="highLightedText"> Jan 20 2016 </span>
-		</div>
+		<div class="right-label">
+			<span class="highLightedText"> {{viewReqCtrl.requisition.reqDate | date:'MMM-dd-yyyy'}} </span>
+		</div>			
 	</div>	
+	<div class="clear-float"></div>	
 
-	<div class="inputLineGroup">
-		<div class="leftLabel">
+	<div class="requisition-tile-info">
+		<div class="left-label">
 			Created By <span class="highLightedText"> Frank Doe</span>
 		</div>
 		
-		<div class="rightLabel">
+		<div class="right-label">
 			Closed By <span class="highLightedText"> Frank Doe</span>
 		</div>
-		
-	</div>	
+	</div>
 
-	<div ng-switch on="requsition.Status">
-		<div ng-switch-when = "Opened">
-				<add-req-item-table-directive items-list="requisitionCtrl.requisitionItems">
-				</add-req-item-table-directive>
-		</div>
-		<div ng-switch-when = "Closed">
+	<div ng-switch on="viewReqCtrl.requisition.status">			
+			<edit-table-directive ng-switch-when = "Open" dropdown-items="viewReqCtrl.reqItems" items-list="viewReqCtrl.requisition.RequisitionItems">
+			</edit-table-directive>	
 
-		</div>
+			<edit-table-directive ng-switch-when = "Closed" dropdown-items="viewReqCtrl.reqItems" items-list="viewReqCtrl.requisition.RequisitionItems">
+			</edit-table-directive>		
 	</div>	
 
 </div>

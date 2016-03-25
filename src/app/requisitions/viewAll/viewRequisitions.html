@@ -4,7 +4,11 @@
         <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="calendar-filter">
-                    <a href="#/requisitions">Today</a>
+                    <div class="date-range-picker-wrap">
+                    <textarea style="text-align:center;" date-range-picker range-picker-formatter-directive date-range-picker options="{locale: {format: 'MMMM D, YYYY'}}"  class="form-control date-picker" type="text" ng-model="allReqCtrl.datePicker.date " cols="10" rows="2" wrap ="hard">
+                     </textarea> 
+                     <i  class="fa fa-caret-down" ></i>      
+                </div>  
                 </li>
                 <li class="requisition-filter">
                     <a ng-click="allReqCtrl.filterByState('open')" ng-class="{'selected': allReqCtrl.filtersModel.state === 'open' }">
@@ -67,7 +71,7 @@
             </tr>
         </thead>
         <tbody>
-        <tr class="requisition table-row" ng-repeat="item in filteredRequisitions = 
+        <tr  ui-sref="requisitions.view({ id: {{item.Id}}})" style ="cursor:pointer" class="requisition table-row" ng-repeat="item in filteredRequisitions = 
             (allReqCtrl.requisitions | filterRequisitions : allReqCtrl.filtersModel.costCenter :allReqCtrl.filtersModel.state 
             | orderBy : allReqCtrl.orderModel.column : allReqCtrl.orderModel.reverse)" 
             ng-class="{'closed' : item.status === 'Closed'}"

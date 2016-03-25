@@ -27,7 +27,7 @@
               controllerAs: 'addReqCtrl'    
             })
             .state('requisitions.view', {
-              url: '/view',
+              url: '/view/:id',
               templateUrl: 'app/requisitions/view/viewRequisition.html',
               controller: 'ViewRequisitionController',
               controllerAs: 'viewReqCtrl'

@@ -2,7 +2,6 @@
 
 $top-botton-input-padding : 30px;
 $right-left-input-padding : 25px;
-
 textArea {
 	@extend .inputElement;
 	width: 100%;
@@ -22,7 +21,7 @@ select .no-border {
 	@extend .inputElement;
 	float: right;
 	// margin-right: 5px;
-	height: 70px;
+	// height: 70px;
 	line-height: 32px;
 }
 
@@ -60,3 +59,7 @@ label{
 }
 
 
+.requisition-tile-info {
+	padding-left: $right-left-input-padding;
+	padding-right: $right-left-input-padding;	
+}
