@@ -14,10 +14,15 @@ $grey : #CACACA;
 $tablet-width: 768px;
 $pc-width: 1024px;
 
+$font-size-10: 10px;
 $font-size-12: 12px;
 $font-size-15 : 15px;
-$font-size-18 : 18px;
 $font-size-17 : 17px;
+$font-size-18 : 18px;
 $font-size-24 : 24px;
 
 $main-font-family:	Open Sans Regular;
+
+.padding-left-20 {
+    padding-left: 20px;
+}

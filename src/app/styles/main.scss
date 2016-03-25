@@ -4,6 +4,18 @@
     font-family: Open Sans, sans-serif;
 }
 
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.view {
+    height: 100%;
+}
+
 body {
   background-color: $light-grey !important;
   outline: none;

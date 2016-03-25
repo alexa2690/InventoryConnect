@@ -11,5 +11,52 @@
     </div>
 </div>
 <div class="content">
-    bla bla content1
+    <table class="templates table-view" >
+        <thead>
+             <tr class="table-header">
+                <td class="name">
+                    <a ng-click="viewTemplCtrl.orderBy('name')" ng-class="viewTemplCtrl.getColumnCssClass('name')">
+                        Name <i class="fa fa-caret-down"></i>
+                    </a>
+                </td>
+                <td class="cost-center">
+                    <a ng-click="viewTemplCtrl.orderBy('costCenter')" ng-class="viewTemplCtrl.getColumnCssClass('costCenter')">
+                        Cost center <i class="fa fa-caret-down"></i>
+                    </a>
+                </td>
+                <td class="created-date">
+                    <a ng-click="viewTemplCtrl.orderBy('createdDate')" ng-class="viewTemplCtrl.getColumnCssClass('createdDate')">
+                        Create date<i class="fa fa-caret-down"></i>
+                    </a>
+                </td>
+                <td class="created-by">
+                    <a ng-click="viewTemplCtrl.orderBy('createdBy')" ng-class="viewTemplCtrl.getColumnCssClass('createdBy')">
+                        Created by <i class="fa fa-caret-down"></i>
+                    </a>
+                </td>
+            </tr>
+        </thead>
+       <tbody>
+           <tr class="template table-row" ng-repeat="item in filteredTemplates = 
+            (viewTemplCtrl.templates | filterRequisitions :  viewTemplCtrl.filtersModel.costCenter
+            |orderBy : viewTemplCtrl.orderModel.column : viewTemplCtrl.orderModel.reverse)" 
+            ng-if="filteredTemplates.length > 0">
+            <td class="name padding-left-20">
+                {{item.name}}<br/>
+            </td>
+            <td class="cost-center">
+                {{item.costCenter}}<br/>
+            </td>
+            <td class="created-date">
+                {{item.createdDate | dateFormat }}<br/>
+            </td>
+            <td class="created-by">
+                <span class="user">{{item.createdBy}}</span>
+            </td>
+            </tr>
+            <tr ng-if="filteredTemplates.length == 0">
+                <td colspan="4" class="no-templates">No templates</td>
+            </tr>
+       </tbody>
+    </table>
 </div>

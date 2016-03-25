@@ -13,7 +13,7 @@
                         Open</a>
                 </li>
                 <li class="requisition-filter">
-                    <a href="" ng-click="allReqCtrl.filterByState('closed')" ng-class="{'selected' : allReqCtrl.filtersModel.state === 'closed'}">
+                    <a ng-click="allReqCtrl.filterByState('closed')" ng-class="{'selected' : allReqCtrl.filtersModel.state === 'closed'}">
                         <span class="number">2</span>
                         <br/>
                         Closed
@@ -41,5 +41,54 @@
     </div>
 </div>
 <div class="content">
-    bla bla content
+    <table class="requisitions table-view" >
+        <thead class="table-header">
+            <tr>
+                 <td class="cost-center padding-left-20">
+                <a ng-click="allReqCtrl.orderBy('costCenter')" ng-class="allReqCtrl.getColumnCssClass('costCenter')">
+                    Cost center <i class="fa fa-caret-down"></i>
+                </a>
+            </td>
+            <td class="req-date">
+                <a ng-click="allReqCtrl.orderBy('reqDate')" ng-class="allReqCtrl.getColumnCssClass('reqDate')">
+                    Req. date <i class="fa fa-caret-down"></i>
+                </a>
+            </td>
+            <td class="requisition-no">
+                <a ng-click="allReqCtrl.orderBy('id')" ng-class="allReqCtrl.getColumnCssClass('id')">
+                    Req.# <i class="fa fa-caret-down"></i>
+                </a>
+            </td>
+            <td class="modified">
+                <a ng-click="allReqCtrl.orderBy('modifyDate')" ng-class="allReqCtrl.getColumnCssClass('modifyDate')">
+                    Last modified by/<span class="closed-by">Closed by</span> <i class="fa fa-caret-down"></i>
+                </a>
+            </td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr class="requisition table-row" ng-repeat="item in filteredRequisitions = 
+            (allReqCtrl.requisitions | filterRequisitions : allReqCtrl.filtersModel.costCenter :allReqCtrl.filtersModel.state 
+            | orderBy : allReqCtrl.orderModel.column : allReqCtrl.orderModel.reverse)" 
+            ng-class="{'closed' : item.status === 'Closed'}"
+            ng-if="filteredRequisitions.length > 0">
+            <td class="cost-center padding-left-20">
+                {{item.costCenter}}<br/>
+                <div class="status">{{item.status}}</div>
+            </td>
+            <td class="req-date" ng-bind-html="item.reqDate | dateFormat">
+            </td>
+            <td class="requisition-no">
+                {{item.id}}
+            </td>
+            <td class="modified">
+                <span ng-bind-html="item.modifyDate | dateFormat"<br/>
+                <span class="user">{{item.modifiedBy}}</span>
+            </td>
+        </tr>
+        <tr ng-if="filteredRequisitions.length == 0">
+            <td colspan="5" class="no-requisitions">No requisitions</td>
+        </tr>
+        </tbody>
+    </table>
  </div>

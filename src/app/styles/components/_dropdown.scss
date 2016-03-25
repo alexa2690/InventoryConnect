@@ -9,6 +9,7 @@ $dropdown-text-color-active: $white !default;
 $dropdown-background-color-active: transparent !default;
 $dropdown-selected-item-background-color: $blue !default;
 $dropdown-selected-item-text-color: $white !default;
+$dropdown-list-max-height: 370px !default;
 
 
 select {
@@ -21,21 +22,29 @@ select {
 	// margin-top: $top-botton-input-margin;
 }
 
-.dropdown.special-dropdown {
+.custom-dropdown {
     > .btn-primary {
         background-color: $dropdown-background-color;
         color: $dropdown-text-color;
         border: $dropdown-border;
         
+        &:hover {
+            background-color: $dropdown-background-color-hover;
+            color: $dropdown-text-color-hover;
+        }
+        
+        &:focus {
+            outline: none;
+        }
+        
+        span {
+           outline: none;
+        }
+        
         i {
             margin-left: 10px;
             @extend .fa-caret-down;
         }
-        
-         &:hover {
-                background-color: $dropdown-background-color-hover;
-                color: $dropdown-text-color-hover;
-             }
     }
     
     &.open {
@@ -53,6 +62,9 @@ select {
             margin-top: 0px;
             min-width: 300px;
             padding: 0px;
+            max-height: $dropdown-list-max-height;
+            overflow-y: auto;
+            overflow-x: hidden;
             
             li {
                 font-size: 15px;
