@@ -60,6 +60,16 @@ $table-header-background: $white;
         background-color: $blue;
         text-align: center;
         padding: 20px;
+
+        .left-icon {
+            float: left;  
+            cursor: pointer;        
+        }
+
+        .right-icon {
+            float: right;
+            cursor: pointer;
+        }
     }
 
     .requisitions {

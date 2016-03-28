@@ -1,5 +1,9 @@
 <div class="content">
-	<header>{{viewReqCtrl.requisition.costCenter}}</header>
+	<header>
+		<span ui-sref="requisitions.all" class="left-icon"><i class="fa fa-angle-left "></i></span>
+		{{viewReqCtrl.requisition.costCenter}}
+		<span ng-click="viewReqCtrl.deleteRequisition()" class="right-icon"><i class="fa fa-trash-o"></i></span>
+	</header>
 
 	<!-- //todo:  create directiv for table -->
 	<div class="requisition-tile-info">
@@ -24,7 +28,7 @@
 		</div>
 	</div>
 
-	<div ng-switch on="viewReqCtrl.requisition.status">			
+	<div  ng-switch on="viewReqCtrl.requisition.status">			
 			<edit-table-directive ng-switch-when = "Open" dropdown-items="viewReqCtrl.reqItems" items-list="viewReqCtrl.requisition.RequisitionItems">
 			</edit-table-directive>	
 

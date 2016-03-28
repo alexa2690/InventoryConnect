@@ -1,15 +1,15 @@
 <div style="margin:10px">
 	<header>Add Requisition</header>
 	<div class="content">
-		<div style="padding-top:30px" class="inputLineGroup">		
-			<select  class="inputElement" ng-model="addReqCtrl.CostCenterId"
-				data-ng-options="costCenter.Id as costCenter.Name  for costCenter in addReqCtrl.costCenters">    
+		<div ng-form="addRequisitionForm" style="padding-top:30px" class="inputLineGroup">		
+			<select required class="inputElement" ng-model="addReqCtrl.requisition.costCenter"
+				data-ng-options="costCenter.name as costCenter.name for costCenter in addReqCtrl.costCenters">    
 			</select>
 
 			<div>
 				<p class="input-group">
-					<input type="text" class="form-control datePicker" uib-datepicker-popup="{{addReqCtrl.format}}" ng-model="addReqCtrl.dt" show-button-bar="false" is-open="addReqCtrl.popup.opened" datepicker-options="addReqCtrl.dateOptions" ng-required="true" close-text="Close"
-					ng-change="selectDate(addReqCtrl.dt)" />
+					<input type="text" class="form-control datePicker" uib-datepicker-popup="{{addReqCtrl.format}}" ng-model="addReqCtrl.requisition.reqDate" show-button-bar="false" is-open="addReqCtrl.popup.opened" datepicker-options="addReqCtrl.dateOptions" ng-required="true" close-text="Close"
+					 />
 					<span  class="input-group-btn">
 						<button  type="button" class="btn btn-default datePickerIcon" ng-click="addReqCtrl.open()"><i class="fa fa-calendar"></i></button>
 					</span>
@@ -27,7 +27,7 @@
 			</div>
 
 			<!-- Requisition Items  Table-->
-			<edit-table-directive dropdown-items="addReqCtrl.reqItems" items-list="addReqCtrl.requisitionItems">
+			<edit-table-directive dropdown-items="addReqCtrl.reqItems" items-list="addReqCtrl.requisition.RequisitionItems">
 
 			</edit-table-directive>
 
@@ -40,14 +40,14 @@
 
 			<div class="input-group-grey" style="">
 				<view-collapse-content-directive title ="Notes" >			 
-					<textarea placeholder="Notes"></textarea>			
+					<textarea  placeholder="Notes"></textarea>			
 				</view-collapse-content-directive>				
 			</div>
 
 			<div class="buttonGroup">
 				<button ui-sref ="requisitions.all"  class="btn actionButton cancelButton">Cancel</button>
 				<button class="btn actionButton closeButton">Close Requisition</button>
-				<button class="btn actionButton saveButtton">Save</button>
+				<button  ng-disabled="addRequisitionForm.$invalid" ng-click="addReqCtrl.saveRequisition()" class="btn actionButton saveButtton">Save</button>
 			</div>
 			<hr/>
 

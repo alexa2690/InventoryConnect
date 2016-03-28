@@ -5,19 +5,27 @@
  .module('invConnect')
  .controller('AddRequisitionController', AddRequisitionController);
 
-AddRequisitionController.$inject = ['$scope','RequisitionService'];
+AddRequisitionController.$inject = ['$scope','$state','RequisitionService'];
 
- function AddRequisitionController($scope,RequisitionService){
+ function AddRequisitionController($scope,$state,RequisitionService){
+       
        var vm = this;
        vm.reqItems = RequisitionService.getRequisitonItems();
+       vm.costCenters = RequisitionService.getCostCenters();       
+       vm.requisition = {
+          Id :Math.floor((Math.random() * 100000) + 1),
+          id : "" + Math.floor((Math.random() * 100000) + 1),
+          RequisitionItems : [],
+          reqDate : new Date(),
+          modifyDate : new Date(),
+          status: 'Open',          
+       }
        
-       vm.requisitionItems = [];
-
-       vm.costCenters = [
-       {
-          Id:1,
-          Name:'Neurology'
-       }];
+       //scope methods
+       vm.saveRequisition =  function(){
+          RequisitionService.addRequisiton(vm.requisition);
+          $state.go('requisitions.all');
+       }
 
        //date picker
        //todo:move to directive
@@ -31,7 +39,6 @@ AddRequisitionController.$inject = ['$scope','RequisitionService'];
             formatYear: 'yy',
             startingDay: 7,
             showWeeks:false,      
-
         };
 
         vm.open = function() {
@@ -52,7 +59,8 @@ AddRequisitionController.$inject = ['$scope','RequisitionService'];
 
         //date range picker
         vm.datePicker = {};
-        vm.datePicker.date = { startDate: new Date(), endDate: new Date()};             
+        vm.datePicker.date = { startDate: new Date(), endDate: new Date()};      
+
 
 }
 })();
